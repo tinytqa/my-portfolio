@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-bg: #0B1110;
+  --color-dark-surface: #121816;
+  --color-dark-surface-hover: #18221f;
+  --color-dark-border: rgba(74, 222, 128, 0.12);
+  --color-dark-border-hover: rgba(74, 222, 128, 0.35);
+
+  --color-mint: #4ADE80;
+  --color-mint-light: #86EFAC;
+  --color-mint-dark: #10B981;
+  --color-mint-glow: rgba(74, 222, 128, 0.25);
+
+  --font-sans: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-mono), monospace;
+}
+
+:root {
+  --bg-primary: #0B1110;
+  --bg-surface: #121816;
+  --mint-primary: #4ADE80;
+  --mint-glow: 0 0 25px rgba(74, 222, 128, 0.35);
+}
+
+html {
+  background-color: #0B1110;
+  color: #F1F5F9;
+  scroll-behavior: auto !important; /* Lenis takes control of smooth scrolling */
+}
+
+body {
+  background-color: #0B1110;
+  color: #F1F5F9;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  selection-background-color: #10B981;
+  selection-color: #0B1110;
+}
+
+::selection {
+  background-color: #10B981;
+  color: #0B1110;
+}
+
+/* Glassmorphism primitives */
+.glass-panel {
+  background: rgba(18, 24, 22, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(74, 222, 128, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel:hover {
+  border-color: rgba(74, 222, 128, 0.35);
+  box-shadow: 0 12px 40px -10px rgba(74, 222, 128, 0.2);
+}
+
+.glass-pill {
+  background: rgba(18, 24, 22, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(74, 222, 128, 0.18);
+  transition: all 0.25s ease;
+}
+
+.glass-pill:hover {
+  border-color: rgba(74, 222, 128, 0.45);
+  background: rgba(24, 34, 31, 0.85);
+  box-shadow: 0 0 15px rgba(74, 222, 128, 0.2);
+}
+
+/* Glow Effects */
+.mint-glow-box {
+  box-shadow: 0 0 35px -5px rgba(74, 222, 128, 0.3);
+}
+
+.mint-glow-text {
+  text-shadow: 0 0 20px rgba(74, 222, 128, 0.5);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B1110;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(74, 222, 128, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(74, 222, 128, 0.45);
+}

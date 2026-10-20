@@ -1,0 +1,2 @@
+// Bento section components folder
+export const BENTO_DIR = true;

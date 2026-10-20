@@ -1,0 +1,2 @@
+// UI primitives folder
+export const UI_DIR = true;

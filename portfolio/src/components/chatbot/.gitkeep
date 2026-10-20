@@ -1,0 +1,2 @@
+// Chatbot section components folder
+export const CHATBOT_DIR = true;

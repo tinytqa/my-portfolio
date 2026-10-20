@@ -1,0 +1,2 @@
+// Hero section components folder
+export const HERO_DIR = true;
