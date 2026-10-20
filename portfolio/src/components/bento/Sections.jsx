@@ -8,6 +8,7 @@ import CapabilityCard from "./CapabilityCard";
 import TraceabilityStrip from "./TraceabilityStrip";
 import LifeCard from "./LifeCard";
 import BooksCard from "./BooksCard";
+import PersonalityCard from "./PersonalityCard";
 import ContactCard from "./ContactCard";
 import ExperienceTimeline from "./ExperienceTimeline";
 import SupportSkills from "./SupportSkills";
@@ -146,6 +147,9 @@ export function LifeSection() {
         description={s.life.description}
       />
       <Grid className="">
+        <motion.div variants={cardVariants}>
+          <PersonalityCard />
+        </motion.div>
         <motion.div variants={cardVariants}>
           <LifeCard />
         </motion.div>

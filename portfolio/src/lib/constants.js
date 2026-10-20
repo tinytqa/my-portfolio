@@ -24,6 +24,33 @@ export const STRAVA = {
   ],
 };
 
+// Words I'd use for myself (the "just for fun" sticker wall). Group titles live in ui-strings.js → personality.
+export const PERSONALITY = [
+  {
+    id: "work",
+    words: [
+      { emoji: "🤔", label: "Hay hỏi “tại sao”" },
+      { emoji: "✅", label: "Có trách nhiệm" },
+      { emoji: "🐢", label: "Kiên trì" },
+      { emoji: "🔍", label: "Tỉ mỉ" },
+      { emoji: "🐝", label: "Chăm chỉ" },
+    ],
+  },
+  {
+    id: "life",
+    words: [
+      { emoji: "☀️", label: "Lạc quan" },
+      { emoji: "⚡", label: "Năng động" },
+      { emoji: "🎉", label: "Hướng ngoại" },
+      { emoji: "😂", label: "Hài hước" },
+      { emoji: "🐰", label: "Nhí nhảnh loi choi" },
+      { emoji: "🔥", label: "Máu liều nhiều hơn máu sợ" },
+      { emoji: "😈", label: "Quỷ nghịch ngợm" },
+      { emoji: "🤏", label: "Tiny" },
+    ],
+  },
+];
+
 // Hobbies without a photo album — shown as chips under the gallery (icon = lucide name in LifeCard)
 export const OTHER_HOBBIES = [
   { id: "cycling", label: "Đạp xe" },
@@ -32,14 +59,56 @@ export const OTHER_HOBBIES = [
 ];
 
 // Books I've read. Cover images go in /public/books (leave `cover` empty to show a plain spine).
+// Optional `quote`: a favourite line, kept in its original language.
 // Add the English version of `takeaways` in content-en.js → BOOKS (same order).
 export const BOOKS = [
-  // {
-  //   title: "Tên sách",
-  //   author: "Tác giả",
-  //   cover: "/books/ten-sach.jpg",
-  //   takeaways: ["Điều mình học được 1", "Điều mình học được 2"],
-  // },
+  {
+    title: "Atomic Habits — Thay đổi tí hon, hiệu quả bất ngờ",
+    author: "James Clear",
+    cover: "/books/atomic-habits.jpeg",
+    takeaways: [
+      "Chỉ cần hôm nay tốt hơn hôm qua 1%: những thay đổi nhỏ cộng dồn lại sẽ tạo ra khác biệt lớn.",
+      "Gắn thói quen mới vào thói quen sẵn có, ví dụ ăn cơm xong thì làm ngay thói quen mới.",
+      "Dùng cơ chế thưởng phạt để giữ thói quen tốt và bỏ thói quen xấu.",
+    ],
+  },
+  {
+    title: "Được học (Educated)",
+    author: "Tara Westover",
+    cover: "/books/duoc-hoc.jpg",
+    quote:
+      "I can stand in this wind, because I'm not trying to stand in it. The wind is just wind. You could withstand these gusts on the ground, so you can withstand them in the air. There is no difference. Except the difference you make in your head.",
+    takeaways: [
+      "Nhiều giới hạn chỉ nằm trong suy nghĩ của mình: khi thôi sợ hãi, việc khó cũng chỉ là việc mình vẫn làm được.",
+      "Học tập không chỉ là kiến thức mà là quyền tự định hình con người mình.",
+      "Dám đặt câu hỏi với cả những điều mình từng tin là đúng.",
+    ],
+  },
+  {
+    title: "Sao chúng ta lại ngủ (Why We Sleep)",
+    author: "Matthew Walker",
+    cover: "/books/sao-chung-ta-lai-ngu.webp",
+    takeaways: [
+      "Phải ngủ đủ: giấc ngủ ảnh hưởng trực tiếp đến trí nhớ, hệ miễn dịch và tâm trạng.",
+      "Không có chuyện ngủ bù: thiếu ngủ hôm nay không lấy lại được, nên phải ngủ đủ mỗi ngày.",
+      "Hiểu cơ chế của giấc ngủ: đồng hồ sinh học và các giai đoạn của một giấc ngủ.",
+      "Nhận ra những thứ khiến mình mất ngủ: caffeine, ánh sáng màn hình, giờ giấc thất thường.",
+      "Cách ngủ dễ hơn: đi ngủ và thức dậy đúng giờ, phòng ngủ tối và mát, hạn chế caffeine buổi chiều.",
+    ],
+  },
+];
+
+// Stories I read for fun — just a cover shelf, no lessons.
+// English titles (where the book has one) go in content-en.js → FICTION_BOOKS (same order).
+export const FICTION_BOOKS = [
+  { title: "Cây cam ngọt của tôi", author: "José Mauro de Vasconcelos", cover: "/books/cay-cam-ngot-cua-toi.jpg" },
+  { title: "Những kẻ âu lo", author: "Fredrik Backman", cover: "/books/nhung-ke-au-lo.webp" },
+  { title: "Cho tôi xin một vé đi tuổi thơ", author: "Nguyễn Nhật Ánh", cover: "/books/cho-toi-xin-mot-ve-di-tuoi-tho.jpg" },
+  { title: "Bảy bước tới mùa hè", author: "Nguyễn Nhật Ánh", cover: "/books/bay-buoc-toi-mua-he.jpg" },
+  { title: "Chú bé rắc rối", author: "Nguyễn Nhật Ánh", cover: "/books/chu-be-rac-roi.jpg" },
+  { title: "Lại thằng nhóc Emil!", author: "Astrid Lindgren", cover: "/books/lai-thang-nhoc-emil.jpg" },
+  { title: "Emily Feather và Chiếc Gương Bí Ẩn", author: "Holly Webb", cover: "/books/emily-feather.jpg" },
+  { title: "Hoàng Tử Bé", author: "Antoine de Saint-Exupéry", cover: "/books/hoang-tu-be.webp" },
 ];
 
 export const HIGHLIGHTS = [

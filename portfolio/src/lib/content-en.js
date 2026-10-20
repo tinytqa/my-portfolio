@@ -9,10 +9,73 @@ export const EN = {
     contact: { cv: "/cv-tran-quynh-anh-en.pdf" },
   },
 
+  PERSONALITY: [
+    {
+      words: [
+        { label: "Always asks “why”" },
+        { label: "Responsible" },
+        { label: "Persistent" },
+        { label: "Detail-oriented" },
+        { label: "Hard-working" },
+      ],
+    },
+    {
+      words: [
+        { label: "Optimistic" },
+        { label: "Energetic" },
+        { label: "Extrovert" },
+        { label: "Funny" },
+        {}, // keeps "Nhí nhảnh loi choi"
+        {}, // keeps "Máu liều nhiều hơn máu sợ"
+        {}, // keeps "Quỷ nghịch ngợm"
+        { label: "Tiny" },
+      ],
+    },
+  ],
+
   OTHER_HOBBIES: [{ label: "Cycling" }, { label: "Swimming" }, { label: "Jump rope" }],
 
+  // Same order as FICTION_BOOKS in constants.js; {} keeps the Vietnamese title
+  FICTION_BOOKS: [
+    { title: "My Sweet Orange Tree" },
+    { title: "Anxious People" },
+    {},
+    {},
+    {},
+    {},
+    { title: "Emily Feather and the Secret Mirror" },
+    { title: "The Little Prince" },
+  ],
+
   // Same order as BOOKS in constants.js; only the fields that need translating
-  BOOKS: [],
+  BOOKS: [
+    {
+      title: "Atomic Habits",
+      takeaways: [
+        "Just be 1% better today than yesterday: small changes compound into a big difference.",
+        "Stack a new habit onto an existing one — for example, do the new habit right after finishing a meal.",
+        "Use rewards and penalties to keep good habits and drop bad ones.",
+      ],
+    },
+    {
+      title: "Educated",
+      takeaways: [
+        "Many limits exist only in my head: once I stop being afraid, a hard task is just something I can already do.",
+        "Education is not just knowledge — it's the right to shape who you become.",
+        "Dare to question even the things you once believed were true.",
+      ],
+    },
+    {
+      title: "Why We Sleep",
+      takeaways: [
+        "Get enough sleep: it directly affects memory, the immune system and mood.",
+        "There's no catching up on sleep: lost sleep can't be made up later, so sleep enough every day.",
+        "How sleep works: the body clock and the stages of a night's sleep.",
+        "What keeps us awake: caffeine, screen light and irregular hours.",
+        "How to fall asleep more easily: fixed bed and wake times, a dark and cool bedroom, no caffeine in the afternoon.",
+      ],
+    },
+  ],
 
   HIGHLIGHTS: [
     { value: "1+ yr", label: "BA cum QA/Tester internships" },

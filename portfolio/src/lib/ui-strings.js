@@ -122,12 +122,21 @@ export const UI = {
       log: "Nhật ký luyện tập",
       strava: "Xem trên Strava",
     },
+    personality: {
+      eyebrow: "Tính cách",
+      title: "Mình là người thế nào?",
+      body: "Vài tính từ mình tự nhận. Phần này làm cho vui thôi nhaaaaa",
+      work: "Khi làm việc",
+      life: "Ngoài đời",
+    },
     reading: {
       eyebrow: "Đọc sách",
       title: "Những cuốn sách mình đã đọc",
       body: "Mỗi cuốn sách để lại cho mình vài bài học, và mình ghi lại chúng ở đây.",
       learned: "Mình học được",
       empty: "Danh sách sách đang được cập nhật.",
+      fiction: "Truyện đọc cho vui",
+      fictionNote: "Những cuốn mình đọc để thư giãn.",
     },
     contact: {
       eyebrow: "Liên hệ",
@@ -261,12 +270,21 @@ export const UI = {
       log: "Training log",
       strava: "View on Strava",
     },
+    personality: {
+      eyebrow: "Personality",
+      title: "What am I like?",
+      body: "A few words I'd use for myself. This part is just for fun!",
+      work: "At work",
+      life: "In life",
+    },
     reading: {
       eyebrow: "Reading",
       title: "Books I've read",
       body: "Every book leaves me with a few lessons, and I keep them here.",
       learned: "What I learned",
       empty: "The reading list is being updated.",
+      fiction: "Just for fun",
+      fictionNote: "Stories I read to unwind.",
     },
     contact: {
       eyebrow: "Contact",
