@@ -10,7 +10,8 @@ import {
   SkillsSection,
   ProjectsSection,
   MoreTabsSection,
-  LifeContactSection,
+  LifeSection,
+  ContactSection,
 } from "@/components/bento/Sections";
 import { useContent } from "@/lib/i18n";
 
@@ -19,7 +20,8 @@ const SECTIONS = {
   "/skills": SkillsSection,
   "/projects": ProjectsSection,
   "/more": MoreTabsSection,
-  "/contact": LifeContactSection,
+  "/life": LifeSection,
+  "/contact": ContactSection,
 };
 
 // Same as the root layout's metadata title

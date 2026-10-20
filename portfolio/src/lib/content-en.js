@@ -9,6 +9,11 @@ export const EN = {
     contact: { cv: "/cv-tran-quynh-anh-en.pdf" },
   },
 
+  OTHER_HOBBIES: [{ label: "Cycling" }, { label: "Swimming" }, { label: "Jump rope" }],
+
+  // Same order as BOOKS in constants.js; only the fields that need translating
+  BOOKS: [],
+
   HIGHLIGHTS: [
     { value: "1+ yr", label: "BA cum QA/Tester internships" },
     { label: "Companies · 4 real projects" },
@@ -21,6 +26,7 @@ export const EN = {
     { label: "Skills" },
     { label: "Projects" },
     { label: "More" },
+    { label: "Beyond work" },
     { label: "Contact" },
   ],
 

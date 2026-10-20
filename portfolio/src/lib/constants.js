@@ -24,6 +24,24 @@ export const STRAVA = {
   ],
 };
 
+// Hobbies without a photo album — shown as chips under the gallery (icon = lucide name in LifeCard)
+export const OTHER_HOBBIES = [
+  { id: "cycling", label: "Đạp xe" },
+  { id: "swimming", label: "Bơi lội" },
+  { id: "jumprope", label: "Nhảy dây" },
+];
+
+// Books I've read. Cover images go in /public/books (leave `cover` empty to show a plain spine).
+// Add the English version of `takeaways` in content-en.js → BOOKS (same order).
+export const BOOKS = [
+  // {
+  //   title: "Tên sách",
+  //   author: "Tác giả",
+  //   cover: "/books/ten-sach.jpg",
+  //   takeaways: ["Điều mình học được 1", "Điều mình học được 2"],
+  // },
+];
+
 export const HIGHLIGHTS = [
   { value: "1+ năm", label: "Thực tập BA kiêm QA/Tester" },
   { value: "3", label: "Công ty · 4 dự án thực tế" },
@@ -36,6 +54,7 @@ export const NAV_LINKS = [
   { label: "Năng lực", href: "/skills" },
   { label: "Dự án", href: "/projects" },
   { label: "Khám phá thêm", href: "/more" },
+  { label: "Ngoài công việc", href: "/life" },
   { label: "Liên hệ", href: "/contact" },
 ];
 

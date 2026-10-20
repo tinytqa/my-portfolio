@@ -7,6 +7,7 @@ import SectionHeader from "./SectionHeader";
 import CapabilityCard from "./CapabilityCard";
 import TraceabilityStrip from "./TraceabilityStrip";
 import LifeCard from "./LifeCard";
+import BooksCard from "./BooksCard";
 import ContactCard from "./ContactCard";
 import ExperienceTimeline from "./ExperienceTimeline";
 import SupportSkills from "./SupportSkills";
@@ -133,7 +134,7 @@ export function MoreTabsSection() {
   );
 }
 
-export function LifeContactSection() {
+export function LifeSection() {
   const s = useT().sections;
   return (
     <section id="life">
@@ -142,15 +143,30 @@ export function LifeContactSection() {
         eyebrow={s.life.eyebrow}
         title={s.life.title}
         highlight={s.life.highlight}
+        description={s.life.description}
       />
-      <Grid className="md:grid-cols-5">
-        <motion.div variants={cardVariants} className="md:col-span-3 h-full">
+      <Grid className="">
+        <motion.div variants={cardVariants}>
           <LifeCard />
         </motion.div>
-        <motion.div variants={cardVariants} className="md:col-span-2 h-full">
-          <ContactCard />
+        <motion.div variants={cardVariants}>
+          <BooksCard />
         </motion.div>
       </Grid>
     </section>
+  );
+}
+
+// Its own layout (one centred call to action) rather than a section header + card grid
+export function ContactSection() {
+  return (
+    <motion.section
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ type: "spring", stiffness: 90, damping: 18 }}
+      className="pt-4"
+    >
+      <ContactCard />
+    </motion.section>
   );
 }
