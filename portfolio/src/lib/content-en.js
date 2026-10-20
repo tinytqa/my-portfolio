@@ -6,6 +6,7 @@
 export const EN = {
   PERSONAL_INFO: {
     location: "Cau Giay, Hanoi",
+    contact: { cv: "/cv-tran-quynh-anh-en.pdf" },
   },
 
   HIGHLIGHTS: [

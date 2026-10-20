@@ -21,7 +21,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata = {
   title: "Trần Quỳnh Anh — Business Analyst & Tester",
   description:
-    "Portfolio của Trần Quỳnh Anh, Fresher Business Analyst kiêm QA: hơn 1 năm thực tập tại 3 công ty qua các dự án ngân hàng (BIDV), Viettel, quản lý kho và AI. BRD/SRS/FRD/RSD, change request, test case, kiểm thử API và SQL.",
+    "Portfolio of Trần Quỳnh Anh, Fresher Business Analyst cum QA: 1+ year of internships at 3 companies across banking (BIDV), Viettel, warehouse management and AI projects. BRD/SRS/FRD/RSD, change requests, test cases, API and SQL testing.",
   keywords: [
     "Trần Quỳnh Anh",
     "Business Analyst",
@@ -39,16 +39,17 @@ export const metadata = {
   openGraph: {
     title: "Trần Quỳnh Anh — Business Analyst & Tester",
     description:
-      "Hiểu đúng yêu cầu, giao đúng sản phẩm. Portfolio BA & Tester của Trần Quỳnh Anh.",
+      "Understand the right requirements, deliver the right product. BA & Tester portfolio of Trần Quỳnh Anh.",
     type: "website",
-    locale: "vi_VN",
+    locale: "en_US",
+    alternateLocale: ["vi_VN"],
   },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html
-      lang="vi"
+      lang="en"
       className={`${jakartaSans.variable} ${jetbrainsMono.variable} dark selection:bg-[#4ADE80] selection:text-[#0B1110]`}
     >
       {/* Browser extensions (e.g. Grammarly) inject attributes on <body> before hydration */}

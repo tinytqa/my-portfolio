@@ -36,8 +36,8 @@ const CONTENT = {
   },
 };
 
-// --- Language store: saved choice → browser language → Vietnamese ---------------------
-// Kept outside React so useSyncExternalStore can read it; the server always renders "vi".
+// --- Language store: saved choice → English ----------------------------------------
+// Kept outside React so useSyncExternalStore can read it; the server always renders "en".
 const listeners = new Set();
 let memoryLang = null; // fallback when localStorage is unavailable (private mode, blocked storage)
 
@@ -46,8 +46,7 @@ function readLang() {
   try {
     saved = localStorage.getItem(STORAGE_KEY) ?? saved;
   } catch {}
-  if (LANGS.includes(saved)) return saved;
-  return navigator.language?.toLowerCase().startsWith("vi") ? "vi" : "en";
+  return LANGS.includes(saved) ? saved : "en";
 }
 
 function subscribe(callback) {
@@ -67,10 +66,10 @@ function writeLang(next) {
   listeners.forEach((callback) => callback());
 }
 
-const LanguageContext = createContext({ lang: "vi", setLang: () => {} });
+const LanguageContext = createContext({ lang: "en", setLang: () => {} });
 
 export function LanguageProvider({ children }) {
-  const lang = useSyncExternalStore(subscribe, readLang, () => "vi");
+  const lang = useSyncExternalStore(subscribe, readLang, () => "en");
 
   useEffect(() => {
     document.documentElement.lang = lang;
