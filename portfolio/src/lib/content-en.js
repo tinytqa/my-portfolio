@@ -275,6 +275,15 @@ export const EN = {
       { name: "IT Project Management" },
       { name: "Graduation Thesis" },
     ],
+    highSchool: {
+      school: "Yen Hoa High School",
+      intro: "A public high school in Cau Giay, Hanoi, founded in 1960. It is one of the capital's top non-specialised schools and usually has the most competitive grade-10 entrance in the city.",
+      achievements: [
+        { title: "National Consolation Prize", detail: "Microsoft Office Specialist World Championship (MOSWC)" },
+        { title: "First Prize, City level", detail: "Excellent Student Competition in History" },
+        { title: "Vice President", detail: "Yen Hoa Book Club" },
+      ],
+    },
   },
 
   CERTIFICATIONS: [{ name: "Top 50 Projects – AI Riser Vietnam 2026" }],

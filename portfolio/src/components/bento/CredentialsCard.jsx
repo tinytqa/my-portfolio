@@ -1,6 +1,6 @@
 "use client";
 
-import { Award, BadgePercent, FileText, GraduationCap, Rocket, Trophy } from "lucide-react";
+import { Award, BadgePercent, FileText, GraduationCap, Rocket, School, Trophy } from "lucide-react";
 import { useContent, useT } from "@/lib/i18n";
 
 const WHY_ICONS = { scholarship: BadgePercent, fast: Rocket };
@@ -115,6 +115,35 @@ export default function CredentialsCard() {
             ))}
           </ul>
         </div>
+
+        {/* High school (secondary) */}
+        {EDUCATION.highSchool && (
+          <div className="relative mt-6 pt-5 border-t border-white/5">
+            <div className="flex items-center gap-2 mb-3">
+              <School className="w-4 h-4 text-slate-400" />
+              <span className="text-[10px] font-mono uppercase tracking-widest text-slate-500">{t.credentials.highSchool}</span>
+            </div>
+            <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+              <h4 className="text-base font-semibold text-slate-100">{EDUCATION.highSchool.school}</h4>
+              <span className="text-xs text-slate-400">{EDUCATION.highSchool.period}</span>
+              <span className="text-xs text-slate-400">
+                · {t.credentials.hsGpa} <span className="font-mono font-semibold text-[#86EFAC]">{EDUCATION.highSchool.gpa}</span> / 10
+              </span>
+            </div>
+            <p className="text-[13px] text-slate-400 leading-snug mt-1.5 max-w-2xl">{EDUCATION.highSchool.intro}</p>
+            <ul className="grid grid-cols-1 sm:grid-cols-3 gap-2 mt-3">
+              {EDUCATION.highSchool.achievements.map(({ title, detail }) => (
+                <li key={title} className="flex gap-2.5 p-3 rounded-xl bg-[#0B1110]/50 border border-white/5">
+                  <Trophy className="shrink-0 w-3.5 h-3.5 mt-0.5 text-amber-300/80" />
+                  <div>
+                    <p className="text-[13px] font-semibold text-slate-200">{title}</p>
+                    <p className="text-xs text-slate-400 leading-snug mt-0.5">{detail}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
 
       {/* Certifications */}

@@ -353,6 +353,18 @@ export const EDUCATION = {
     { name: "Quản lý dự án CNTT", grade: "A", score: "8.6" },
     { name: "Khoá luận tốt nghiệp", grade: "A", score: "8.7" },
   ],
+  // Secondary entry, shown small at the bottom of the education card
+  highSchool: {
+    school: "THPT Yên Hòa",
+    period: "2020 – 2023",
+    gpa: "9.6",
+    intro: "Trường THPT công lập thành lập năm 1960 tại Cầu Giấy, Hà Nội, thuộc nhóm trường không chuyên tốt nhất thủ đô và thường có tỷ lệ chọi vào lớp 10 cao nhất thành phố.",
+    achievements: [
+      { title: "Giải Khuyến khích Quốc gia", detail: "Cuộc thi Tin học văn phòng thế giới MOSWC" },
+      { title: "Giải Nhất cấp Thành phố", detail: "Kỳ thi học sinh giỏi môn Lịch sử" },
+      { title: "Phó Chủ tịch", detail: "Câu lạc bộ Sách Yên Hòa" },
+    ],
+  },
 };
 
 export const CERTIFICATIONS = [

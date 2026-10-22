@@ -113,7 +113,7 @@ export const UI = {
       inClass: "Khi đứng lớp",
       atWork: "Khi làm BA / Tester",
     },
-    credentials: { education: "Học vấn", certs: "Chứng chỉ & Thành tích", gpa10: "Hệ 10", credits: "Tín chỉ", duration: "Thời gian học", achievements: "Thành tích tại trường", keyCourses: "Môn chuyên ngành nổi bật", transcript: "Xem bảng điểm" },
+    credentials: { education: "Học vấn", certs: "Chứng chỉ & Thành tích", gpa10: "Hệ 10", credits: "Tín chỉ", duration: "Thời gian học", achievements: "Thành tích tại trường", keyCourses: "Môn chuyên ngành nổi bật", transcript: "Xem bảng điểm", highSchool: "Trung học phổ thông", hsGpa: "Điểm tổng kết" },
     life: {
       eyebrow: "Ngoài giờ làm việc",
       title: "Vận động mỗi ngày",
@@ -145,6 +145,7 @@ export const UI = {
       bodyPost: "Rất vui được trao đổi thêm về cách mình có thể đóng góp cho team.",
       cv: "Tải CV",
       phone: "Điện thoại",
+      zalo: "Nhắn tin qua Zalo",
       location: "Địa chỉ",
     },
   },
@@ -261,7 +262,7 @@ export const UI = {
       inClass: "In the classroom",
       atWork: "As a BA / Tester",
     },
-    credentials: { education: "Education", certs: "Certifications & Achievements", gpa10: "10-point scale", credits: "Credits", duration: "Duration", achievements: "University achievements", keyCourses: "Key courses", transcript: "View transcript" },
+    credentials: { education: "Education", certs: "Certifications & Achievements", gpa10: "10-point scale", credits: "Credits", duration: "Duration", achievements: "University achievements", keyCourses: "Key courses", transcript: "View transcript", highSchool: "High school", hsGpa: "Final GPA" },
     life: {
       eyebrow: "Outside work",
       title: "Staying active",
@@ -293,6 +294,7 @@ export const UI = {
       bodyPost: "I'd be happy to talk more about how I can contribute to your team.",
       cv: "Download CV",
       phone: "Phone",
+      zalo: "Message on Zalo",
       location: "Location",
     },
   },

@@ -1,16 +1,17 @@
 "use client";
 
-import { Code2, Download, Mail, MapPin, Phone, Send, UserRound } from "lucide-react";
+import { Code2, Download, Mail, MapPin, MessageCircle, Phone, Send, UserRound } from "lucide-react";
 import { useContent, useT } from "@/lib/i18n";
 
 export default function ContactCard() {
   const { PERSONAL_INFO } = useContent();
   const t = useT();
   const { email, phone, linkedin, github, cv } = PERSONAL_INFO.contact;
+  const phoneDigits = phone?.replace(/\s/g, "");
 
   // Only render the channels that have been filled in; email gets the main button instead
   const channels = [
-    phone && { icon: Phone, title: t.contact.phone, label: phone, href: `tel:${phone.replace(/\s/g, "")}` },
+    phone && { icon: Phone, title: t.contact.phone, label: phone, href: `tel:${phoneDigits}`, isPhone: true },
     linkedin && { icon: UserRound, title: "LinkedIn", label: "LinkedIn", href: linkedin },
     github && { icon: Code2, title: "GitHub", label: github.replace(/^https?:\/\/(www\.)?github\.com\//, ""), href: github },
     { icon: MapPin, title: t.contact.location, label: PERSONAL_INFO.location },
@@ -58,7 +59,7 @@ export default function ContactCard() {
       </div>
 
       <ul className={`relative grid grid-cols-1 gap-3 mt-10 text-left ${channels.length > 2 ? "sm:grid-cols-3" : "sm:grid-cols-2"}`}>
-        {channels.map(({ icon: Icon, title, label, href }) => {
+        {channels.map(({ icon: Icon, title, label, href, isPhone }) => {
           const body = (
             <>
               <span className="shrink-0 w-10 h-10 rounded-xl bg-[#4ADE80]/10 border border-[#4ADE80]/20 flex items-center justify-center">
@@ -71,6 +72,27 @@ export default function ContactCard() {
             </>
           );
           const className = "flex items-center gap-3 p-4 rounded-2xl bg-[#0B1110]/70 border border-white/5";
+          if (isPhone) {
+            const actionClass =
+              "shrink-0 w-8 h-8 rounded-lg border border-white/10 flex items-center justify-center text-slate-400 hover:text-[#4ADE80] hover:border-[#4ADE80]/40 transition-colors";
+            return (
+              <li key={title} className={`${className} hover:border-[#4ADE80]/40 transition-colors`}>
+                <a href={href} className="flex items-center gap-3 min-w-0 flex-1">
+                  {body}
+                </a>
+                <a
+                  href={`https://zalo.me/${phoneDigits}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={t.contact.zalo}
+                  aria-label={t.contact.zalo}
+                  className={actionClass}
+                >
+                  <MessageCircle className="w-4 h-4" />
+                </a>
+              </li>
+            );
+          }
           return (
             <li key={title}>
               {href ? (
