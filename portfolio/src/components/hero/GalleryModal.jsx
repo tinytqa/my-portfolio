@@ -67,7 +67,7 @@ export default function GalleryModal({ albumId, onAlbumChange, onClose }) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.25 }}
-          className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6 bg-[#050807]/80 backdrop-blur-md"
+          className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6 bg-[#1C1917]/80 backdrop-blur-md"
           onClick={close}
           role="dialog"
           aria-modal="true"
@@ -79,19 +79,19 @@ export default function GalleryModal({ albumId, onAlbumChange, onClose }) {
             exit={{ opacity: 0, y: 16, scale: 0.98 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-5xl max-h-full flex flex-col rounded-3xl glass-panel border border-[#4ADE80]/20 overflow-hidden"
+            className="relative w-full max-w-5xl max-h-full flex flex-col rounded-3xl glass-panel border border-accent/20 overflow-hidden"
           >
             {/* Header */}
-            <div className="flex items-center justify-between gap-4 px-5 sm:px-6 pt-5 pb-4 border-b border-[#4ADE80]/10">
+            <div className="flex items-center justify-between gap-4 px-5 sm:px-6 pt-5 pb-4 border-b border-accent/10">
               <div className="flex items-center gap-2.5">
-                <Images className="w-5 h-5 text-[#4ADE80]" />
-                <h2 className="text-lg font-semibold text-slate-100">{t.gallery.title}</h2>
+                <Images className="w-5 h-5 text-accent" />
+                <h2 className="text-lg font-semibold text-stone-900">{t.gallery.title}</h2>
               </div>
               <button
                 type="button"
                 onClick={close}
                 aria-label={t.gallery.close}
-                className="p-2 rounded-full text-slate-400 hover:text-[#4ADE80] hover:bg-[#4ADE80]/10 transition-colors cursor-pointer"
+                className="p-2 rounded-full text-stone-600 hover:text-accent hover:bg-accent/10 transition-colors cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -112,12 +112,12 @@ export default function GalleryModal({ albumId, onAlbumChange, onClose }) {
                     onClick={() => onAlbumChange(a.id)}
                     className={`shrink-0 inline-flex items-center gap-1.5 h-9 px-4 rounded-full border text-sm leading-none transition-colors duration-200 cursor-pointer ${
                       active
-                        ? "bg-[#4ADE80] border-[#4ADE80] text-[#0B1110] font-semibold"
-                        : "bg-transparent border-white/10 text-slate-300 hover:text-[#4ADE80] hover:border-[#4ADE80]/40"
+                        ? "bg-accent border-accent text-on-accent font-semibold"
+                        : "bg-transparent border-stone-200 text-stone-700 hover:text-accent hover:border-accent/40"
                     }`}
                   >
                     {a.label}
-                    <span className={`text-xs ${active ? "text-[#0B1110]/60" : "text-slate-500"}`}>{a.photos.length}</span>
+                    <span className={`text-xs ${active ? "text-on-accent/60" : "text-stone-500"}`}>{a.photos.length}</span>
                   </button>
                 );
               })}
@@ -145,7 +145,7 @@ export default function GalleryModal({ albumId, onAlbumChange, onClose }) {
                       initial={{ opacity: 0, scale: 0.96 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: Math.min(i * 0.04, 0.4), duration: 0.3 }}
-                      className="group relative aspect-[3/4] rounded-xl overflow-hidden bg-black/40 border border-[#4ADE80]/10 hover:border-[#4ADE80]/50 transition-colors cursor-zoom-in"
+                      className="group relative aspect-[3/4] rounded-xl overflow-hidden bg-stone-100 border border-accent/10 hover:border-accent/50 transition-colors cursor-zoom-in"
                     >
                       <Image
                         src={src}
@@ -196,7 +196,7 @@ export default function GalleryModal({ albumId, onAlbumChange, onClose }) {
                   </motion.div>
                 </AnimatePresence>
 
-                <span className="absolute top-4 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-black/50 text-xs font-mono text-slate-300">
+                <span className="absolute top-4 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-black/50 text-xs font-mono text-white/80">
                   {album.label} · {photoIndex + 1} / {photos.length}
                 </span>
 
@@ -207,7 +207,7 @@ export default function GalleryModal({ albumId, onAlbumChange, onClose }) {
                     setPhotoIndex(null);
                   }}
                   aria-label={t.gallery.closePhoto}
-                  className="absolute top-3 right-3 p-2.5 rounded-full bg-black/50 text-slate-200 hover:text-[#4ADE80] cursor-pointer"
+                  className="absolute top-3 right-3 p-2.5 rounded-full bg-black/50 text-white hover:text-emerald-300 cursor-pointer"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -225,7 +225,7 @@ export default function GalleryModal({ albumId, onAlbumChange, onClose }) {
                         step(delta);
                       }}
                       aria-label={label}
-                      className={`absolute ${pos} top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 border border-white/10 text-slate-200 hover:text-[#4ADE80] hover:border-[#4ADE80]/40 cursor-pointer`}
+                      className={`absolute ${pos} top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 border border-white/20 text-white hover:text-emerald-300 hover:border-emerald-300/40 cursor-pointer`}
                     >
                       <Icon className="w-6 h-6" />
                     </button>

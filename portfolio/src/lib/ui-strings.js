@@ -2,7 +2,7 @@
 
 export const UI = {
   vi: {
-    nav: { home: "về trang chủ", homeLabel: "Trang chủ", pager: "Chuyển trang", switchTo: "Switch to English" },
+    nav: { home: "về trang chủ", homeLabel: "Trang chủ", pager: "Chuyển trang", switchTo: "Switch to English", toggleTheme: "Đổi giao diện sáng / tối" },
     hero: {
       taglinePre: "Mình giúp team",
       taglineMid: "hiểu đúng yêu cầu",
@@ -151,7 +151,7 @@ export const UI = {
   },
 
   en: {
-    nav: { home: "home", homeLabel: "Home", pager: "Page navigation", switchTo: "Chuyển sang tiếng Việt" },
+    nav: { home: "home", homeLabel: "Home", pager: "Page navigation", switchTo: "Chuyển sang tiếng Việt", toggleTheme: "Toggle light / dark theme" },
     hero: {
       taglinePre: "I help teams",
       taglineMid: "get the requirements right",

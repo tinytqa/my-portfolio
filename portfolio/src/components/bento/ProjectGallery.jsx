@@ -32,13 +32,13 @@ export default function ProjectGallery() {
                 aria-selected={active}
                 onClick={() => setFilter(f)}
                 className={`relative shrink-0 px-3.5 py-1.5 rounded-full text-sm transition-colors cursor-pointer ${
-                  active ? "text-[#0B1110] font-semibold" : "text-slate-300 hover:text-[#4ADE80] bg-[#121816]/70 border border-white/5"
+                  active ? "text-on-accent font-semibold" : "text-stone-700 hover:text-accent bg-surface/70 border border-stone-200"
                 }`}
               >
                 {active && (
                   <motion.span
                     layoutId="project-filter"
-                    className="absolute inset-0 rounded-full bg-[#4ADE80]"
+                    className="absolute inset-0 rounded-full bg-accent"
                     transition={{ type: "spring", stiffness: 380, damping: 32 }}
                   />
                 )}
@@ -53,7 +53,7 @@ export default function ProjectGallery() {
           href={PERSONAL_INFO.contact.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="shrink-0 inline-flex items-center gap-1.5 text-xs font-mono text-slate-400 hover:text-[#4ADE80] transition-colors"
+          className="shrink-0 inline-flex items-center gap-1.5 text-xs font-mono text-stone-600 hover:text-accent transition-colors"
         >
           <Code2 className="w-3.5 h-3.5" />
           {t.projects.viewAll} <ArrowUpRight className="w-3.5 h-3.5" />

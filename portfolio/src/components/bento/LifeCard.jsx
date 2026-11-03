@@ -34,28 +34,28 @@ export default function LifeCard() {
   const hobbies = ALBUMS.filter((a) => a.id !== "me");
 
   return (
-    <div className="relative p-6 sm:p-8 rounded-3xl glass-panel border border-[#4ADE80]/20 hover:border-[#4ADE80]/50 transition-all duration-500 overflow-hidden">
-      <div className="absolute -top-16 -left-16 w-48 h-48 bg-[#4ADE80]/10 rounded-full blur-3xl pointer-events-none" />
+    <div className="relative p-6 sm:p-8 rounded-3xl glass-panel border border-accent/20 hover:border-accent/50 transition-all duration-500 overflow-hidden">
+      <div className="absolute -top-16 -left-16 w-48 h-48 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
         {/* Story, other hobbies and Strava */}
         <div className="lg:col-span-2 flex flex-col">
-          <span className="text-[11px] font-mono uppercase tracking-widest text-[#4ADE80]">
+          <span className="text-[11px] font-mono uppercase tracking-widest text-accent">
             {t.life.eyebrow}
           </span>
-          <h3 className="text-2xl font-bold text-white tracking-tight mt-1 mb-3">{t.life.title}</h3>
-          <p className="text-sm text-slate-400 leading-relaxed">{t.life.body}</p>
+          <h3 className="text-2xl font-bold text-stone-900 tracking-tight mt-1 mb-3">{t.life.title}</h3>
+          <p className="text-sm text-stone-600 leading-relaxed">{t.life.body}</p>
 
           {OTHER_HOBBIES.length > 0 && (
             <div className="mt-6">
-              <p className="text-xs text-slate-400 mb-2">{t.life.alsoLike}</p>
+              <p className="text-xs text-stone-600 mb-2">{t.life.alsoLike}</p>
               <div className="flex flex-wrap gap-2">
                 {OTHER_HOBBIES.map(({ id, label }) => {
                   const Icon = HOBBY_ICONS[id] ?? Activity;
                   return (
                     <span
                       key={id}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#4ADE80]/[0.06] border border-[#4ADE80]/20 text-xs font-medium text-[#86EFAC]"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-accent/[0.06] border border-accent/20 text-xs font-medium text-accent-soft"
                     >
                       <Icon className="w-3.5 h-3.5" />
                       {label}
@@ -70,7 +70,7 @@ export default function LifeCard() {
             href={STRAVA.profile}
             target="_blank"
             rel="noopener noreferrer"
-            className="self-start mt-6 inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#FC4C02]/10 border border-[#FC4C02]/40 text-xs font-semibold text-[#FF8A5B] hover:bg-[#FC4C02]/20 transition-colors"
+            className="self-start mt-6 inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#FC4C02]/10 border border-[#FC4C02]/40 text-xs font-semibold text-[#C2410C] hover:bg-[#FC4C02]/20 transition-colors"
           >
             <Activity className="w-3.5 h-3.5" />
             {t.life.strava} <ArrowUpRight className="w-3.5 h-3.5" />
@@ -84,7 +84,7 @@ export default function LifeCard() {
               key={album.id}
               type="button"
               onClick={() => setOpenAlbum(album.id)}
-              className={`group relative aspect-[3/4] rounded-2xl overflow-hidden border border-[#4ADE80]/15 hover:border-[#4ADE80]/50 transition-colors cursor-pointer ${
+              className={`group relative aspect-[3/4] rounded-2xl overflow-hidden border border-accent/15 hover:border-accent/50 transition-colors cursor-pointer ${
                 i % 2 === 1 ? "lg:translate-y-6" : ""
               }`}
             >
@@ -97,7 +97,7 @@ export default function LifeCard() {
               />
               <span className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/80 to-transparent text-left">
                 <span className="block text-sm font-semibold text-white">{album.label}</span>
-                <span className="flex items-center gap-1 text-[10px] font-mono text-[#86EFAC]">
+                <span className="flex items-center gap-1 text-[10px] font-mono text-emerald-200">
                   <Images className="w-3 h-3" />
                   {album.photos.length} {t.gallery.photos}
                 </span>
@@ -109,8 +109,8 @@ export default function LifeCard() {
 
       {/* Strava embeds, when configured */}
       {STRAVA.widgets.length > 0 && (
-        <div className="relative mt-10 pt-6 border-t border-white/5">
-          <p className="flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-widest text-[#4ADE80] mb-3">
+        <div className="relative mt-10 pt-6 border-t border-stone-200">
+          <p className="flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-widest text-accent mb-3">
             <Activity className="w-3.5 h-3.5" />
             {t.life.log}
           </p>
@@ -122,7 +122,7 @@ export default function LifeCard() {
                 title={w.title}
                 height={w.height}
                 loading="lazy"
-                className="w-full rounded-xl border border-white/10 bg-white"
+                className="w-full rounded-xl border border-stone-200 bg-white"
               />
             ))}
           </div>

@@ -56,8 +56,8 @@ export default function TextReveal({ text = "Hi, I'm Quỳnh Anh", className = "
               char === " " ? "w-2 sm:w-3 md:w-4" : ""
             } ${
               isNamePart
-                ? "bg-gradient-to-r from-[#4ADE80] via-[#86EFAC] to-[#10B981] bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(74,222,128,0.4)]"
-                : "text-slate-100"
+                ? "bg-gradient-to-r from-accent via-accent-soft to-accent-deep bg-clip-text text-transparent drop-shadow-[0_4px_14px_rgba(4,120,87,0.15)]"
+                : "text-stone-900"
             }`}
           >
             {char}

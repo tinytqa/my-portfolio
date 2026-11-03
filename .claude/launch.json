@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "portfolio",
+      "runtimeExecutable": "powershell",
+      "runtimeArgs": ["-NoProfile", "-Command", "Set-Location 'c:\\Users\\tranq\\OneDrive\\Documents\\GitHub\\myportfolio\\portfolio'; npm run dev"],
+      "port": 3000
+    }
+  ]
+}

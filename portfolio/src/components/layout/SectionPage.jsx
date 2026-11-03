@@ -18,10 +18,10 @@ export default function SectionPage({ children }) {
     <div className="relative w-full px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto pt-40 lg:pt-32 pb-16">
       {children}
 
-      <nav aria-label={t.nav.pager} className="mt-16 pt-8 border-t border-[#4ADE80]/10 flex items-center justify-between gap-4">
+      <nav aria-label={t.nav.pager} className="mt-16 pt-8 border-t border-accent/10 flex items-center justify-between gap-4">
         <TabLink
           href={prev.href}
-          className="group inline-flex items-center gap-2 px-4 py-2.5 rounded-full glass-pill border border-[#4ADE80]/20 hover:border-[#4ADE80]/50 text-sm text-slate-300 hover:text-[#4ADE80] transition-all"
+          className="group inline-flex items-center gap-2 px-4 py-2.5 rounded-full glass-pill border border-accent/20 hover:border-accent/50 text-sm text-stone-700 hover:text-accent transition-all"
         >
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
           <span>{prev.label}</span>
@@ -29,7 +29,7 @@ export default function SectionPage({ children }) {
         {next && (
           <TabLink
             href={next.href}
-            className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#4ADE80] text-[#0B1110] font-semibold text-sm hover:bg-[#86EFAC] transition-all shadow-[0_0_20px_rgba(74,222,128,0.3)]"
+            className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent text-on-accent font-semibold text-sm hover:bg-accent-soft transition-all shadow-[0_4px_14px_rgba(4,120,87,0.15)]"
           >
             <span>{next.label}</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
