@@ -50,7 +50,7 @@ export default function NeuralParticles() {
 
           if (dist < 90) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(74, 222, 128, ${0.18 * (1 - dist / 90)})`;
+            ctx.strokeStyle = `rgba(16, 185, 129, ${0.18 * (1 - dist / 90)})`;
             ctx.lineWidth = 0.8;
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
@@ -70,7 +70,7 @@ export default function NeuralParticles() {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(74, 222, 128, 0.4)";
+        ctx.fillStyle = "rgba(16, 185, 129, 0.4)"; // canvas cannot read CSS vars; mid-green works on both themes
         ctx.fill();
       }
 

@@ -29,7 +29,7 @@ export default function MoreSection() {
       <div className="flex justify-start sm:justify-center mb-8">
         <div
           role="tablist"
-          className="flex gap-1 p-1.5 max-w-full overflow-x-auto rounded-full glass-pill border border-[#4ADE80]/20"
+          className="flex gap-1 p-1.5 max-w-full overflow-x-auto rounded-full glass-pill border border-accent/20"
         >
           {TABS.map(({ id, icon: Icon }) => {
             const active = id === activeId;
@@ -41,13 +41,13 @@ export default function MoreSection() {
                 aria-selected={active}
                 onClick={() => setActiveId(id)}
                 className={`relative shrink-0 inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm transition-colors cursor-pointer ${
-                  active ? "text-[#0B1110] font-semibold" : "text-slate-300 hover:text-[#4ADE80]"
+                  active ? "text-on-accent font-semibold" : "text-stone-700 hover:text-accent"
                 }`}
               >
                 {active && (
                   <motion.span
                     layoutId="more-tab"
-                    className="absolute inset-0 rounded-full bg-[#4ADE80]"
+                    className="absolute inset-0 rounded-full bg-accent"
                     transition={{ type: "spring", stiffness: 380, damping: 32 }}
                   />
                 )}
@@ -69,8 +69,8 @@ export default function MoreSection() {
           transition={{ duration: 0.3, ease: "easeOut" }}
         >
           <div className="text-center mb-8">
-            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">{text.title}</h3>
-            <p className="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto">{text.description}</p>
+            <h3 className="text-2xl sm:text-3xl font-bold text-stone-900 mb-2">{text.title}</h3>
+            <p className="text-sm sm:text-base text-stone-600 max-w-2xl mx-auto">{text.description}</p>
           </div>
           <Content />
         </motion.div>

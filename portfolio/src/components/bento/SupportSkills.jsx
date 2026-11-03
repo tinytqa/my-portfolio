@@ -10,8 +10,8 @@ export default function SupportSkills() {
   const { SUPPORT_SKILLS } = useContent();
   const t = useT();
   return (
-    <div className="p-5 sm:p-6 rounded-3xl glass-panel border border-[#4ADE80]/20">
-      <h3 className="text-base font-bold text-white mb-4">{t.support.title}</h3>
+    <div className="p-5 sm:p-6 rounded-3xl glass-panel border border-accent/20">
+      <h3 className="text-base font-bold text-stone-900 mb-4">{t.support.title}</h3>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
         {SUPPORT_SKILLS.map((item, i) => {
           const Icon = ICONS[item.icon] ?? Sparkles;
@@ -22,11 +22,11 @@ export default function SupportSkills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="p-4 rounded-2xl bg-[#0B1110]/80 border border-white/5 hover:border-[#4ADE80]/35 transition-colors"
+              className="p-4 rounded-2xl bg-page/80 border border-stone-200 hover:border-accent/35 transition-colors"
             >
-              <Icon className="w-4 h-4 text-[#4ADE80] mb-2" />
-              <p className="text-sm font-semibold text-slate-100 mb-1">{item.title}</p>
-              <p className="text-xs text-slate-400 leading-relaxed">{item.detail}</p>
+              <Icon className="w-4 h-4 text-accent mb-2" />
+              <p className="text-sm font-semibold text-stone-900 mb-1">{item.title}</p>
+              <p className="text-xs text-stone-600 leading-relaxed">{item.detail}</p>
             </motion.div>
           );
         })}

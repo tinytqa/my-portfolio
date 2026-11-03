@@ -81,23 +81,23 @@ export default function SkillBadges() {
             whileHover={{
               y: -4,
               scale: 1.04,
-              boxShadow: "0 0 20px -3px rgba(74, 222, 128, 0.4)",
+              boxShadow: "0 0 20px -3px color-mix(in srgb, var(--color-accent) 40%, transparent)",
               transition: { duration: 0.2 },
             }}
-            className="group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#121816]/80 backdrop-blur-md border border-[#4ADE80]/20 hover:border-[#4ADE80]/60 transition-colors duration-300 cursor-default"
+            className="group relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-surface/80 backdrop-blur-md border border-accent/20 hover:border-accent/60 transition-colors duration-300 cursor-default"
           >
             {/* Subtle glow background on hover */}
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#4ADE80]/10 to-[#10B981]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-accent/10 to-accent-deep/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-            <div className="relative z-10 w-6 h-6 rounded-lg bg-[#0B1110] border border-[#4ADE80]/30 flex items-center justify-center text-[#4ADE80] group-hover:scale-110 transition-transform duration-300">
+            <div className="relative z-10 w-6 h-6 rounded-lg bg-page border border-accent/30 flex items-center justify-center text-accent group-hover:scale-110 transition-transform duration-300">
               <Icon className="w-3.5 h-3.5" />
             </div>
 
             <div className="relative z-10 flex flex-col text-left">
-              <span className="text-xs font-semibold text-slate-100 group-hover:text-[#4ADE80] transition-colors">
+              <span className="text-xs font-semibold text-stone-900 group-hover:text-accent transition-colors">
                 {skill.name}
               </span>
-              <span className="text-[10px] font-mono text-slate-400 group-hover:text-slate-300 transition-colors">
+              <span className="text-[10px] font-mono text-stone-600 group-hover:text-stone-700 transition-colors">
                 {t.hero.skillRoles[i] ?? skill.role}
               </span>
             </div>

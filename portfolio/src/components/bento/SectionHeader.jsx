@@ -10,7 +10,7 @@ export default function SectionHeader({ icon: Icon, eyebrow, title, highlight, d
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.3 }}
-        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#121816] border border-[#4ADE80]/30 text-xs font-mono mb-4 text-[#4ADE80]"
+        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface border border-accent/30 text-xs font-mono mb-4 text-accent"
       >
         <Icon className="w-3.5 h-3.5" />
         <span>{eyebrow}</span>
@@ -21,10 +21,10 @@ export default function SectionHeader({ icon: Icon, eyebrow, title, highlight, d
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.35, delay: 0.05 }}
-        className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4"
+        className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-stone-900 mb-4"
       >
         {title}{" "}
-        <span className="bg-gradient-to-r from-[#4ADE80] to-[#10B981] bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-accent to-accent-deep bg-clip-text text-transparent">
           {highlight}
         </span>
       </motion.h2>
@@ -35,7 +35,7 @@ export default function SectionHeader({ icon: Icon, eyebrow, title, highlight, d
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.35, delay: 0.1 }}
-          className="text-sm sm:text-base text-slate-400 max-w-xl"
+          className="text-sm sm:text-base text-stone-600 max-w-xl"
         >
           {description}
         </motion.p>

@@ -20,19 +20,19 @@ export default function ContactCard() {
   return (
     <div
       id="contact"
-      className="relative max-w-4xl mx-auto px-6 py-12 sm:px-12 sm:py-16 rounded-[2rem] glass-panel border border-[#4ADE80]/30 overflow-hidden text-center"
+      className="relative max-w-4xl mx-auto px-6 py-12 sm:px-12 sm:py-16 rounded-[2rem] glass-panel border border-accent/30 overflow-hidden text-center"
     >
-      <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-48 bg-[#4ADE80]/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-48 bg-accent/15 rounded-full blur-3xl pointer-events-none" />
 
-      <span className="relative inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#121816] border border-[#4ADE80]/30 text-xs font-mono text-[#4ADE80]">
+      <span className="relative inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface border border-accent/30 text-xs font-mono text-accent">
         <Send className="w-3.5 h-3.5" />
         {t.contact.eyebrow}
       </span>
-      <h2 className="relative text-3xl sm:text-5xl font-extrabold tracking-tight text-white mt-5 mb-4">
+      <h2 className="relative text-3xl sm:text-5xl font-extrabold tracking-tight text-stone-900 mt-5 mb-4">
         {t.contact.title}
       </h2>
-      <p className="relative text-sm sm:text-base text-slate-400 leading-relaxed max-w-xl mx-auto">
-        {t.contact.bodyPre} <span className="text-slate-200">Business Analyst / Tester</span>.{" "}
+      <p className="relative text-sm sm:text-base text-stone-600 leading-relaxed max-w-xl mx-auto">
+        {t.contact.bodyPre} <span className="text-stone-800">Business Analyst / Tester</span>.{" "}
         {t.contact.bodyPost}
       </p>
 
@@ -40,7 +40,7 @@ export default function ContactCard() {
         {email && (
           <a
             href={`mailto:${email}`}
-            className="inline-flex items-center gap-2 max-w-full px-6 py-3.5 rounded-full bg-[#4ADE80] text-[#0B1110] font-semibold text-sm hover:bg-[#86EFAC] transition-all shadow-[0_0_25px_rgba(74,222,128,0.35)]"
+            className="inline-flex items-center gap-2 max-w-full px-6 py-3.5 rounded-full bg-accent text-on-accent font-semibold text-sm hover:bg-accent-soft transition-all shadow-[0_4px_14px_rgba(4,120,87,0.15)]"
           >
             <Mail className="shrink-0 w-4 h-4" />
             <span className="truncate">{email}</span>
@@ -50,7 +50,7 @@ export default function ContactCard() {
           <a
             href={cv}
             download
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full glass-pill border border-[#4ADE80]/40 text-sm font-semibold text-[#86EFAC] hover:border-[#4ADE80] hover:text-[#4ADE80] transition-all"
+            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full glass-pill border border-accent/40 text-sm font-semibold text-accent-soft hover:border-accent hover:text-accent transition-all"
           >
             <Download className="w-4 h-4" />
             {t.contact.cv}
@@ -62,21 +62,21 @@ export default function ContactCard() {
         {channels.map(({ icon: Icon, title, label, href, isPhone }) => {
           const body = (
             <>
-              <span className="shrink-0 w-10 h-10 rounded-xl bg-[#4ADE80]/10 border border-[#4ADE80]/20 flex items-center justify-center">
-                <Icon className="w-4 h-4 text-[#4ADE80]" />
+              <span className="shrink-0 w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center">
+                <Icon className="w-4 h-4 text-accent" />
               </span>
               <span className="min-w-0">
-                <span className="block text-[10px] font-mono uppercase tracking-wider text-slate-500">{title}</span>
-                <span className="block text-sm text-slate-200 truncate">{label}</span>
+                <span className="block text-[10px] font-mono uppercase tracking-wider text-stone-500">{title}</span>
+                <span className="block text-sm text-stone-800 truncate">{label}</span>
               </span>
             </>
           );
-          const className = "flex items-center gap-3 p-4 rounded-2xl bg-[#0B1110]/70 border border-white/5";
+          const className = "flex items-center gap-3 p-4 rounded-2xl bg-page/70 border border-stone-200";
           if (isPhone) {
             const actionClass =
-              "shrink-0 w-8 h-8 rounded-lg border border-white/10 flex items-center justify-center text-slate-400 hover:text-[#4ADE80] hover:border-[#4ADE80]/40 transition-colors";
+              "shrink-0 w-8 h-8 rounded-lg border border-stone-200 flex items-center justify-center text-stone-600 hover:text-accent hover:border-accent/40 transition-colors";
             return (
-              <li key={title} className={`${className} hover:border-[#4ADE80]/40 transition-colors`}>
+              <li key={title} className={`${className} hover:border-accent/40 transition-colors`}>
                 <a href={href} className="flex items-center gap-3 min-w-0 flex-1">
                   {body}
                 </a>
@@ -100,7 +100,7 @@ export default function ContactCard() {
                   href={href}
                   target={href.startsWith("http") ? "_blank" : undefined}
                   rel="noopener noreferrer"
-                  className={`${className} hover:border-[#4ADE80]/40 transition-colors`}
+                  className={`${className} hover:border-accent/40 transition-colors`}
                 >
                   {body}
                 </a>

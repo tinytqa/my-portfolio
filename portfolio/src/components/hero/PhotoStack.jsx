@@ -66,7 +66,7 @@ export default function PhotoStack() {
         <motion.div
           animate={{ opacity: hovered ? 0.55 : 0.35, scale: hovered ? 1.1 : 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="absolute w-72 h-72 rounded-full blur-[90px] bg-gradient-to-tr from-[#10B981] via-[#4ADE80] to-[#86EFAC] pointer-events-none"
+          className="absolute w-72 h-72 rounded-full blur-[90px] bg-gradient-to-tr from-accent-deep via-accent to-accent-soft pointer-events-none"
         />
 
         <motion.div
@@ -92,9 +92,9 @@ export default function PhotoStack() {
                 whileHover={{ scale: 1.02, z: HOVER_DEPTH, zIndex: 20 }}
                 transition={SPRING}
                 style={{ zIndex: i }}
-                className="absolute inset-0 rounded-2xl p-2 pb-9 bg-[#121816] border border-[#4ADE80]/25 shadow-[0_18px_45px_-12px_rgba(0,0,0,0.7)] hover:border-[#4ADE80]/60 hover:shadow-[0_0_30px_rgba(74,222,128,0.25)] transition-[border-color,box-shadow] duration-300 cursor-pointer focus-visible:outline-2 focus-visible:outline-[#4ADE80]"
+                className="absolute inset-0 rounded-2xl p-2 pb-9 bg-surface border border-accent/25 shadow-[0_18px_45px_-12px_rgba(0,0,0,0.12)] hover:border-accent/60 hover:shadow-[0_4px_14px_rgba(4,120,87,0.15)] transition-[border-color,box-shadow] duration-300 cursor-pointer focus-visible:outline-2 focus-visible:outline-accent"
               >
-                <div className="relative w-full h-full rounded-xl overflow-hidden bg-black/40">
+                <div className="relative w-full h-full rounded-xl overflow-hidden bg-stone-100">
                   <Image
                     src={album.photos[0]}
                     alt={album.label}
@@ -105,8 +105,8 @@ export default function PhotoStack() {
                   />
                 </div>
                 <span className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[11px] font-mono">
-                  <span className="text-slate-200">{album.label}</span>
-                  <span className="text-[#4ADE80]">{album.photos.length} {t.gallery.photos}</span>
+                  <span className="text-stone-800">{album.label}</span>
+                  <span className="text-accent">{album.photos.length} {t.gallery.photos}</span>
                 </span>
               </motion.button>
             );
@@ -120,10 +120,10 @@ export default function PhotoStack() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.5 }}
-          className="absolute bottom-0 sm:bottom-2 left-1/2 -translate-x-1/2 z-30 inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-[#4ADE80]/30 text-xs font-mono text-slate-200 hover:text-[#4ADE80] whitespace-nowrap cursor-pointer"
+          className="absolute bottom-0 sm:bottom-2 left-1/2 -translate-x-1/2 z-30 inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-accent/30 text-xs font-mono text-stone-800 hover:text-accent whitespace-nowrap cursor-pointer"
         >
-          <Images className="w-3.5 h-3.5 text-[#4ADE80]" />
-          {t.gallery.viewGallery} · <span className="text-[#4ADE80]">{total} {t.gallery.photos}</span>
+          <Images className="w-3.5 h-3.5 text-accent" />
+          {t.gallery.viewGallery} · <span className="text-accent">{total} {t.gallery.photos}</span>
         </motion.button>
       </div>
 

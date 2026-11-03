@@ -1,82 +1,129 @@
 @import "tailwindcss";
 
-@theme {
-  --color-dark-bg: #0B1110;
-  --color-dark-surface: #121816;
-  --color-dark-surface-hover: #18221f;
-  --color-dark-border: rgba(74, 222, 128, 0.12);
-  --color-dark-border-hover: rgba(74, 222, 128, 0.35);
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
-  --color-mint: #4ADE80;
-  --color-mint-light: #86EFAC;
-  --color-mint-dark: #10B981;
-  --color-mint-glow: rgba(74, 222, 128, 0.25);
+/* Light theme is the default; [data-theme="dark"] on <html> swaps every token below */
+@theme {
+  --color-page: #FAFAF9;
+  --color-surface: #FFFFFF;
+  --color-accent: #047857;
+  --color-accent-soft: #065F46;
+  --color-accent-deep: #059669;
+  --color-accent-tint: #D1FAE5;
+  --color-on-accent: #FFFFFF;
 
   --font-sans: var(--font-jakarta), system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-mono), monospace;
 }
 
 :root {
-  --bg-primary: #0B1110;
-  --bg-surface: #121816;
-  --mint-primary: #4ADE80;
-  --mint-glow: 0 0 25px rgba(74, 222, 128, 0.35);
+  --grid-line: rgba(0, 0, 0, 0.6);
+  --card-border: #E7E5E4;
+  color-scheme: light;
+}
+
+/* Original dark theme. Components use stone-* for text/borders, so remap those back to the old slate/white values */
+:root[data-theme="dark"] {
+  --color-page: #0B1110;
+  --color-surface: #121816;
+  --color-accent: #4ADE80;
+  --color-accent-soft: #86EFAC;
+  --color-accent-deep: #10B981;
+  --color-accent-tint: #064E3B;
+  --color-on-accent: #0B1110;
+
+  --color-stone-900: #FFFFFF;
+  --color-stone-800: #E2E8F0;
+  --color-stone-700: #CBD5E1;
+  --color-stone-600: #94A3B8;
+  --color-stone-500: #64748B;
+  --color-stone-400: #64748B;
+  --color-stone-200: rgba(255, 255, 255, 0.08);
+  --color-stone-100: rgba(0, 0, 0, 0.4);
+  --color-amber-800: #FDE68A;
+  --color-amber-700: #FCD34D;
+  --color-amber-500: #FCD34D;
+  --color-sky-800: #7DD3FC;
+
+  --grid-line: rgba(255, 255, 255, 0.1);
+  --card-border: rgba(74, 222, 128, 0.12);
+  color-scheme: dark;
+}
+
+html,
+body {
+  background-color: var(--color-page);
+  color: var(--color-stone-900);
 }
 
 html {
-  background-color: #0B1110;
-  color: #F1F5F9;
   scroll-behavior: auto !important; /* Lenis takes control of smooth scrolling */
 }
 
 body {
-  background-color: #0B1110;
-  color: #F1F5F9;
   font-family: var(--font-sans);
   overflow-x: hidden;
-  selection-background-color: #10B981;
-  selection-color: #0B1110;
 }
 
 ::selection {
-  background-color: #10B981;
-  color: #0B1110;
+  background-color: var(--color-accent-tint);
+  color: var(--color-stone-900);
 }
 
-/* Glassmorphism primitives */
+/* Card primitives */
 .glass-panel {
-  background: rgba(18, 24, 22, 0.65);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(74, 222, 128, 0.12);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  background: var(--color-surface);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-panel:hover {
-  border-color: rgba(74, 222, 128, 0.35);
-  box-shadow: 0 12px 40px -10px rgba(74, 222, 128, 0.2);
+  border-color: #D6D3D1;
+  box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.1);
 }
 
 .glass-pill {
-  background: rgba(18, 24, 22, 0.8);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(74, 222, 128, 0.18);
+  background: var(--color-surface);
+  border: 1px solid var(--card-border);
   transition: all 0.25s ease;
 }
 
 .glass-pill:hover {
-  border-color: rgba(74, 222, 128, 0.45);
+  border-color: color-mix(in srgb, var(--color-accent) 40%, transparent);
+}
+
+.mint-glow-box {
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--color-accent) 15%, transparent);
+}
+
+[data-theme="dark"] .glass-panel {
+  background: rgba(18, 24, 22, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+[data-theme="dark"] .glass-panel:hover {
+  border-color: rgba(74, 222, 128, 0.35);
+  box-shadow: 0 12px 40px -10px rgba(74, 222, 128, 0.2);
+}
+
+[data-theme="dark"] .glass-pill {
+  background: rgba(18, 24, 22, 0.8);
+  backdrop-filter: blur(12px);
+}
+
+[data-theme="dark"] .glass-pill:hover {
   background: rgba(24, 34, 31, 0.85);
   box-shadow: 0 0 15px rgba(74, 222, 128, 0.2);
 }
 
-/* Glow Effects */
-.mint-glow-box {
+[data-theme="dark"] .mint-glow-box {
   box-shadow: 0 0 35px -5px rgba(74, 222, 128, 0.3);
 }
 
-.mint-glow-text {
+[data-theme="dark"] .mint-glow-text {
   text-shadow: 0 0 20px rgba(74, 222, 128, 0.5);
 }
 
@@ -86,14 +133,14 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0B1110;
+  background: var(--color-page);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(74, 222, 128, 0.2);
+  background: color-mix(in srgb, var(--color-stone-500) 40%, transparent);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(74, 222, 128, 0.45);
+  background: color-mix(in srgb, var(--color-stone-500) 70%, transparent);
 }
